@@ -13,5 +13,5 @@ You can surf the file structure as mentioned above.
  
  
 
-|Copyright© 2020.|  |
-|----------------|--|
+|Copyright© 2020.| 
+|----------------|
