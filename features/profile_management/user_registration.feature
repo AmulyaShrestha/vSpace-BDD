@@ -5,7 +5,7 @@ Feature: Register into the system
     Scenario Outline: User wants to register new account
     Given The registration page appears with respective fields for user details
     When All the credential of registraion is fulfilled as "<username>", "<email>", "<age>" and clicked on signup button
-    Then The homepage appears with successfully login message box as "<responseMessage>"
+    Then The homepage appears with message box as "<responseMessage>"
 
     Examples:
         | username | email | age | responseMessage |
