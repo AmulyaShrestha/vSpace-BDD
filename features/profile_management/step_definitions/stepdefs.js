@@ -25,7 +25,7 @@ When("All the credential of registraion is fulfilled as {string}, {string}, {str
     this.actualOutcome = profileManagement.registerUser(userObject);
 });
 
-Then("The homepage appears with successfully login message box as {string}", function (expectedOutcome) {
+Then("The homepage appears with message box as {string}", function (expectedOutcome) {
     assert.equal(this.actualOutcome, expectedOutcome);
     if (this.actualOutcome === expectedOutcome) {
         console.log(expectedOutcome);
