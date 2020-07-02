@@ -32,8 +32,3 @@ Then("The homepage appears with successfully login message box as {string}", fun
     }
 });
 
-git init
-git add README.md
-git commit - m "first commit"
-git remote add origin https://github.com/AmulyaShrestha/RecyclerViewAndroid.git
-git push - u origin master
