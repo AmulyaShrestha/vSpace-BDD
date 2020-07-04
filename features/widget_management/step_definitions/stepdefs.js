@@ -46,3 +46,63 @@ Then("Entire layout with widgets positiong and sizing will be stored in local st
   this.actualSavedDashboardArray = widgetsManagementRules.getSavedDashboardArray();
   assert.equal(this.actualSavedDashboardArray, expectedDashboardArray);
 });
+
+/**
+ * @story = Refresh Widgets on refresh button click
+ * @storyId = US19
+ * */
+Given (
+    "Appearance of {string} with button refresh",
+    function (widgetType) {
+      this.WidgetType = widgetType;
+    }
+      );
+When(
+    "User click refresh button on {string}", function (
+        widgetType
+    ) {
+      if (this.WidgetType === widgetType) {
+        this.actualOutcome = widgetsManagementRules.refreshWidgetType(widgetType)
+        ;
+      }
+    }
+    );
+Then(
+    "The content of the {string} should be refreshed with new content"
+    ,
+    function (expectedOutcome) {
+      this.actualOutcome = expectedOutcome
+      if (this.actualOutcome === expectedOutcome) {
+        console.log(expectedOutcome);
+      }
+    });
+
+/**
+ * @story = Remove Widgets on remove button click
+ * @storyId = US15
+ * */
+Given (
+    "Appearance of {string} with button delete",
+    function (widgetType) {
+      this.WidgetType = widgetType;
+    }
+);
+When(
+    "User click delete button on {string}", function (
+        widgetType
+    ) {
+      if (this.WidgetType === widgetType) {
+        this.actualOutcome = widgetsManagementRules.deleteWidgetType(widgetType)
+        ;
+      }
+    }
+);
+Then(
+    "The {string} should be removed",
+    function (expectedOutcome) {
+        this.actualOutcome = expectedOutcome
+        if (this.actualOutcome === expectedOutcome) {
+            console.log(expectedOutcome);
+        }
+    } );
+
