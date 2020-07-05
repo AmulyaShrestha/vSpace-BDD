@@ -20,4 +20,11 @@ module.exports = class NotesAndToDos {
             return 'Successfully edited'
         }
     }
+    deleteNote = (noteStatus) => {
+        const deleteNoteObject = {
+            currentStatus: 'deleted',
+            reponseMessage: 'Successfully note deleted'
+        }
+        return deleteNoteObject;
+    }
 }
