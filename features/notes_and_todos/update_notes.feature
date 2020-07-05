@@ -5,7 +5,7 @@ Feature: Update notes
     Scenario Outline: User wants to edit notes
         Given The note appears on dashboard as "<initialNoteTitle>", "<initialNoteContent>"
         When The initial notes is replaced with "<newNoteTitle>", "<newNoteContent>" and clicked on save button
-        Then The updted note is saved with "<responseMessage>"
+        Then The updated note is saved with "<responseMessage>"
 
         Examples:
             | initialNoteTitle | initialNoteContent | newNoteTitle | newNoteContent    | responseMessage             |

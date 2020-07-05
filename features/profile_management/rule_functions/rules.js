@@ -1,6 +1,7 @@
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var usernameRegex = /^[A-Za-z0-9]+$/;
 
+
 module.exports = class ProfileManagementRules {
     registerUser = (userObject) => {
         if (!(userObject.email.match(mailformat) && userObject.userName.match(usernameRegex))) {
@@ -9,6 +10,15 @@ module.exports = class ProfileManagementRules {
             return 'Sama007 already exists!';
         } else {
             return `${userObject.userName} has been registered!`
+        }
+    }
+
+    loginUser = (userloginObject) => {
+        if(!(userloginObject.userName === 'sama007' || userloginObject.password === 'sama1234' )){
+            return 'Invalid username or password!!'
+        }
+        else{
+            return `${userloginObject.userName} has been successfully logged in!`
         }
     }
 }
