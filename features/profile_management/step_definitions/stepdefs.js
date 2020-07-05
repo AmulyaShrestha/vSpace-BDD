@@ -14,7 +14,7 @@ Given(
     }
 );
 
-When("All the credential of registraion is fulfilled as {string}, {string}, {string} and clicked on signup button", function (
+When("All the credential of registration is fulfilled as {string}, {string}, {string} and clicked on signup button", function (
     userName, email, age
 ) {
     const userObject = {
@@ -39,7 +39,7 @@ Then("The homepage appears with message box as {string}", function (expectedOutc
 Given(
     "The logout page appears with user status as {string}",
     function (userStatus) {
-        this.logout = userStatus;   
+        this.logout = userStatus;
     }
 );
 
@@ -58,3 +58,31 @@ Then("The login page appears with message box as {string} and user status finall
 
 
 
+
+/**
+ *  @story = Login into the system
+ *  @storyId = US29
+ */
+Given(
+    "The login page appears without any credential",
+    function () {
+        // Only shows desc.
+    }
+);
+
+When("All the credential of login is fulfilled as {string}, {string} and clicked on signin button", function (
+    userName, password
+) {
+    const userloginObject = {
+        userName: userName,
+        password: password
+    };
+    this.actualOutcome = profileManagement.loginUser(userloginObject);
+});
+
+Then("The dashboard appears with message box as {string}", function (expectedOutcome) {
+    assert.equal(this.actualOutcome, expectedOutcome);
+    if (this.actualOutcome === expectedOutcome) {
+        console.log(expectedOutcome);
+    }
+});
