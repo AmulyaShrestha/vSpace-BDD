@@ -14,7 +14,7 @@ Given(
     }
 );
 
-When("All the credential of registraion is fulfilled as {string}, {string}, {string} and clicked on signup button", function (
+When("All the credential of registration is fulfilled as {string}, {string}, {string} and clicked on signup button", function (
     userName, email, age
 ) {
     const userObject = {
