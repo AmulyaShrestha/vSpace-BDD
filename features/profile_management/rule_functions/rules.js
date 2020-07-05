@@ -2,6 +2,7 @@ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var usernameRegex = /^[A-Za-z0-9]+$/;
 
 module.exports = class ProfileManagementRules {
+
     registerUser = (userObject) => {
         if (!(userObject.email.match(mailformat) && userObject.userName.match(usernameRegex))) {
             return 'Username or Email invalid!';
@@ -10,5 +11,13 @@ module.exports = class ProfileManagementRules {
         } else {
             return `${userObject.userName} has been registered!`
         }
+    }
+
+    logout = (userStatus) => {
+        const logOutObject = {
+            currentStatus: 'notSignedIn',
+            reponseMessage: 'Successfully logged out'
+        }
+        return logOutObject;
     }
 }
