@@ -1,5 +1,6 @@
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var usernameRegex = /^[A-Za-z0-9]+$/;
+var passwordValidity = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
 
 module.exports = class ProfileManagementRules {
@@ -21,6 +22,13 @@ module.exports = class ProfileManagementRules {
         else{
             return `${userloginObject.userName} has been successfully logged in!`
         }
+    }
+
+    checkTokenValidity = (validToken, usedToken, new_password) => {
+        if (validToken === usedToken && new_password.match(passwordValidity)) {
+            return true;
+        }
+        return false;
     }
 
     logout = (userStatus) => {
