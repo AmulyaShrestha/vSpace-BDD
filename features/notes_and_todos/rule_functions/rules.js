@@ -20,4 +20,15 @@ module.exports = class NotesAndToDos {
             return 'Successfully edited'
         }
     }
+
+    addToDoList = (todoListObject) => {
+        if (todoListObject.Content === "") {
+            return 'Content seems to be missing!!'
+        } else if (todoListObject.Title === "") {
+            return 'Title seems to be missing!!'
+        } else {
+            return 'ToDoList has been successfully saved!'
+        }
+    }
 }
+
