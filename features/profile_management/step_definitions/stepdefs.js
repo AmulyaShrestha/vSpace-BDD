@@ -32,6 +32,32 @@ Then("The homepage appears with message box as {string}", function (expectedOutc
     }
 });
 
+/**
+ *  @story = Logout from the system
+ *  @storyId = US39
+ */
+Given(
+    "The logout page appears with user status as {string}",
+    function (userStatus) {
+        this.logout = userStatus;
+    }
+);
+
+When("Clicks on the logout button to change the status to {string}", function (userStatus
+) {
+    const logOutObject = profileManagement.logout(userStatus);
+    this.actualStatus = logOutObject.currentStatus;
+    this.actualResponse = logOutObject.reponseMessage;
+});
+
+Then("The login page appears with message box as {string} and user status finally changes to {string}", function (expectedMessage,expectedStatus) {
+    assert.equal(this.actualStatus, expectedStatus);
+    assert.equal(this.actualResponse, expectedMessage);
+    console.log (expectedMessage);
+});
+
+
+
 
 /**
  *  @story = Login into the system
