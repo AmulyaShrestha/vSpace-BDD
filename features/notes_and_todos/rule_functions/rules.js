@@ -27,4 +27,23 @@ module.exports = class NotesAndToDos {
         }
         return deleteNoteObject;
     }
+
+    deleteTodos = (todosStatus) => {
+        const deleteTodosObject = {
+            currentStatus: 'deleted',
+            reponseMessage: 'Successfully todolist deleted'
+        }
+        return deleteTodosObject;
+    }
+
+    updateTodo = (updateTodoObject) => {
+        if (updateTodoObject.newTodoTitle === "") {
+            return 'Title seems to be missing'
+        } else if (updateTodoObject.newTodoContent === "") {
+            return 'Content seems to be missing'
+
+        } else {
+            return 'Successfully edited'
+        }
+    }
 }

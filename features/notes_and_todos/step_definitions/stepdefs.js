@@ -83,3 +83,56 @@ Then("The note from the dashboard is {string} with message as {string}", functio
     assert.equal(this.actualStatus, expectedStatus);
     console.log(expectedMessage);
 });
+
+/**
+ *  @story = Delete Note
+ *  @storyId = US39
+ */
+Given(
+    "The todolist on dashboard appears as {string}",
+    function (todosStatus) {
+        this.deleteTodos = todosStatus;
+    }
+);
+
+When("Click on delete button to {string}", function (todosStatus
+) {
+    const deleteTodosObject = notesAndToDos.deleteTodos(todosStatus);
+    this.actualStatus = deleteTodosObject.currentStatus;
+    this.actualResponse = deleteTodosObject.reponseMessage;
+});
+
+Then("The todolist from the dashboard is {string} with message as {string}", function (expectedStatus,expectedMessage) {
+    assert.equal(this.actualResponse, expectedMessage);
+    assert.equal(this.actualStatus, expectedStatus);
+    console.log(expectedMessage);
+});
+
+/**
+ *  @story = Update todo list
+ *  @storyId = US22
+ */
+
+Given(
+    "The todo list appears on dashboard as {string}, {string}",
+    function (initialTodoTitle, initialTodoContent) {
+      this.initialTodo = initialTodoTitle, initialTodoContent;
+    }
+  );
+
+  When("The initial todo list is replaced with {string}, {string} and clicked on save button", function (
+    newTodoTitle, newTodoContent
+  ) {
+      const updateTodoObject = {
+        newTodoTitle: newTodoTitle,
+        newTodoContent: newTodoContent
+    };
+      this.actualOutcome = notesAndToDos.updateTodo(updateTodoObject);
+  });
+
+  Then("The updated todo list is saved with {string}", function (expectedOutcome) {
+    assert.equal(this.actualOutcome, expectedOutcome);
+    if (this.actualOutcome === expectedOutcome) {
+      console.log(expectedOutcome);
+    }
+  });
