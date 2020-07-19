@@ -16,6 +16,12 @@ module.exports = class WidgetsManagementRules {
             case "weather":
                 return `added ${widgetType}`;
                 break;
+            case "news":
+                return `added ${widgetType}`;
+                break;
+            case "map":
+                return `added ${widgetType}`;
+                break;
         }
     };
 

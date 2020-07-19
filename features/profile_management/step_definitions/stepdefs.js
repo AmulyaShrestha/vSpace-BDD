@@ -88,13 +88,40 @@ Then("The dashboard appears with message box as {string}", function (expectedOut
 });
 
 /**
+ *  @story = Recover password with email verification
+ *  @storyId = US30
+ */
+Given(
+    "Email box is filled with {string}",
+    function (valid_email) {
+        // Only shows desc.
+    }
+);
+
+When("Click on the verify button to send reset {string} and enter {string} and valid token for successful rest", function (
+    valid_token, new_password
+) {
+    this.newPassword = new_password;
+    this.validToken = valid_token;
+});
+
+Then("Check token for validity and reset with new password if {string} matches successfully", function (
+     used_token) {
+    if (profileManagement.checkTokenValidity(this.validToken, used_token, this.newPassword)) {
+        console.log('Successfully reset password!');
+    } else {
+        console.log('Tokens did not match');
+    }
+});
+
+/**
  *  @story = View profile
  *  @storyId = US39
  */
 Given(
     "The dashboard of system displays", function () {
 
-    } 
+    }
 );
 
 When("Clicks on profile button which is labeled as {string}", function (profile
