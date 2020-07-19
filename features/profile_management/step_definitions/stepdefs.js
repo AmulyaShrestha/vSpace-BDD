@@ -139,4 +139,31 @@ Then("The profile is displayed with the response message as {string}", function 
     }
 });
 
+/**
+ *  @story = Maintain session (Remember me)
+ *  @storyId = US34
+ */
+Given(
+    "The login page with remember me option displays",
+    function () {
+        // Only shows desc.
+    }
+);
+
+When("Clicks on remember me check box to {string}", function (
+    remember_account
+) {
+
+    this.rememberAccount = remember_account;
+});
+
+Then("The account is {string} successfully on next login", function (
+    remembered) {
+    if (profileManagement.rememberMe(this.rememberAccount, remembered)) {
+        console.log('Successfully remember account!');
+    } else {
+        console.log('Do you want remember your account??');
+    }
+});
+
 

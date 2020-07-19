@@ -43,6 +43,13 @@ module.exports = class ProfileManagementRules {
         return "Successfully profile is viewed";
     }
 
+    rememberMe = (rememberAccount, remembered) => {
+        if (rememberAccount === remembered) {
+            return false;
+        }
+        return true;
+    }
+
 }
 
 
