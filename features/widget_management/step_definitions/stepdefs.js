@@ -106,3 +106,64 @@ Then(
         }
     } );
 
+/**
+ * @story = Add news widget
+ * @storyId = US13
+ * */
+Given (
+    "Users want to add important news widget {string}",
+    function (widgetType) {
+        this.WidgetType = widgetType;
+    }
+);
+When(
+    "Users copy link of their preferred news into {string}", function (
+        widgetType
+    ) {
+        if (this.WidgetType === widgetType) {
+            this.actualOutcome = widgetsManagementRules.checkAddedWidgetType(widgetType)
+            ;
+        }
+    }
+);
+Then(
+    "They can post specified news in  widget {string}",function (expectedOutcome) {
+        this.actualOutcome = expectedOutcome
+    if (this.actualOutcome===expectedOutcome)
+    {
+        console.log(expectedOutcome);
+    }
+
+}
+     );
+
+/**
+ * @story = Add map widget
+ * @storyId = US13
+ * */
+Given (
+    "Users want to add  {string}",
+    function (widgetType) {
+        this.WidgetType = widgetType;
+    }
+);
+When(
+    "Users selects {string} in advance category section", function (
+        widgetType
+    ) {
+        if (this.WidgetType === widgetType) {
+            this.actualOutcome = widgetsManagementRules.checkAddedWidgetType(widgetType)
+            ;
+        }
+    }
+);
+Then(
+    "They can drag {string} to their desktop and arrange it",function (expectedOutcome) {
+        this.actualOutcome = expectedOutcome
+        if (this.actualOutcome===expectedOutcome)
+        {
+            console.log(expectedOutcome);
+        }
+
+    }
+);
