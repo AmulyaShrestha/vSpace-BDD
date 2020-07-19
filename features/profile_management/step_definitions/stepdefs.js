@@ -113,3 +113,30 @@ Then("Check token for validity and reset with new password if {string} matches s
         console.log('Tokens did not match');
     }
 });
+
+/**
+ *  @story = View profile
+ *  @storyId = US39
+ */
+Given(
+    "The dashboard of system displays", function () {
+
+    }
+);
+
+When("Clicks on profile button which is labeled as {string}", function (profile
+) {
+    const viewProfileObject = {
+        profile: profile
+    };
+    this.actualOutcome = profileManagement.viewProfile(viewProfileObject);
+});
+
+Then("The profile is displayed with the response message as {string}", function (expectedOutcome) {
+    assert.equal(this.actualOutcome, expectedOutcome);
+    if (this.actualOutcome === expectedOutcome) {
+        console.log(expectedOutcome);
+    }
+});
+
+

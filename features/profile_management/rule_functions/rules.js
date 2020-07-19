@@ -38,4 +38,11 @@ module.exports = class ProfileManagementRules {
         }
         return logOutObject;
     }
+
+    viewProfile = (profile) => {
+        return "Successfully profile is viewed";
+    }
+
 }
+
+
