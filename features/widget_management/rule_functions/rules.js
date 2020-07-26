@@ -72,4 +72,15 @@ module.exports = class WidgetsManagementRules {
                 break;
         }
     };
+
+    selecttheme = (theme) =>{
+        switch (theme) {
+            case "corona_statistics":
+                return ` ${theme}`;
+                break;
+            case "analogue_clock":
+                return ` ${theme}`;
+                break;
+        }
+    };
 }
