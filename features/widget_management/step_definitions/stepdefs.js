@@ -167,3 +167,34 @@ Then(
 
     }
 );
+
+/**
+ * @story = Selection of theme
+ * @storyId = US16
+ * */
+Given (
+    "Users wants to decorate their {string}",
+    function (theme) {
+        this.Theme = theme;
+    }
+);
+When(
+    "Users go to their preferred {string} and selects edit option", function (
+        theme
+    ) {
+        if (this.Theme === theme) {
+            this.actualOutcome = widgetsManagementRules.selecttheme(theme)
+            ;
+        }
+    }
+);
+Then(
+    "can chose variety of colors to decorate their {string}",function (expectedOutcome) {
+        this.actualOutcome = expectedOutcome
+        if (this.actualOutcome===expectedOutcome)
+        {
+            console.log(expectedOutcome);
+        }
+
+    }
+);
