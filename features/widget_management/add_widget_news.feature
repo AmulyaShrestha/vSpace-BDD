@@ -8,5 +8,5 @@ Feature: Add Widgets news
 
     Examples:
       | widgetType        |
-      | news |
+      | news              |
 

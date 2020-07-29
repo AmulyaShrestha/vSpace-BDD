@@ -8,5 +8,5 @@ Feature: Add Widgets map
 
     Examples:
       | widgetType        |
-      | map |
+      | map               |
 
