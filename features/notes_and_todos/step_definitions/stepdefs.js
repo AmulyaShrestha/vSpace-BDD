@@ -166,3 +166,51 @@ Given(
       console.log(expectedOutcome);
     }
   });
+
+/**
+ *  @story = bulk Delete Note
+ *  @storyId = US29
+ */
+Given(
+    "User want to delete the {string}",
+    function (noteStatus) {
+        this.deleteNote = noteStatus;
+    }
+);
+
+When("User selects desired {string} proceeds with delete button", function (noteStatus
+) {
+    const bulkdeleteNoteObject = notesAndToDos.bulkdeleteNote(noteStatus);
+    this.actualStatus = bulkdeleteNoteObject.currentStatus;
+    this.actualResponse = bulkdeleteNoteObject.reponseMessage;
+});
+
+Then("The selected {string} are deleted", function (expectedStatus,expectedMessage) {
+    assert.equal(this.actualResponse, expectedMessage);
+    assert.equal(this.actualStatus, expectedStatus);
+    console.log(expectedMessage);
+});
+
+/**
+ *  @story = bulk Delete to-do
+ *  @storyId = US29
+ */
+Given(
+    "User want to delete the {string} ",
+    function (todoStatus) {
+        this.deleteNote = todoStatus;
+    }
+);
+
+When("User selects desired {string} and proceeds with delete button", function (todoStatus
+) {
+    const deleteTodosObject = notesAndToDos.bulkdeleteTodos(todoStatus);
+    this.actualStatus = deleteTodosObject.currentStatus;
+    this.actualResponse = deleteTodosObject.reponseMessage;
+});
+
+Then("The select {string} are deleted", function (expectedStatus,expectedMessage) {
+    assert.equal(this.actualResponse, expectedMessage);
+    assert.equal(this.actualStatus, expectedStatus);
+    console.log(expectedMessage);
+});

@@ -56,5 +56,21 @@ module.exports = class NotesAndToDos {
             return 'Successfully edited'
         }
     }
+
+    bulkdeleteNote = (noteStatus) => {
+        const bulkdeleteNoteObject = {
+            currentStatus: 'deleted',
+            reponseMessage: ' bulk note deleted'
+        }
+        return bulkdeleteNoteObject;
+    }
+
+    bulkdeleteTodos = (todosStatus) => {
+        const bulkdeleteTodosObject = {
+            currentStatus: 'deleted',
+            reponseMessage: 'Successfully bulk todolist deleted'
+        }
+        return bulkdeleteTodosObject;
+    }
 }
 
